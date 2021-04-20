@@ -21,6 +21,8 @@
 
 	<modules>
 		<module>eureka</module>
+		<module>hello-server</module>
+		<module>redis-server</module>
 	</modules>
 
 	<dependencies>
