@@ -23,6 +23,7 @@
 		<module>eureka</module>
 		<module>hello-server</module>
 		<module>redis-server</module>
+		<module>rabbit-server</module>
 	</modules>
 
 	<dependencies>
