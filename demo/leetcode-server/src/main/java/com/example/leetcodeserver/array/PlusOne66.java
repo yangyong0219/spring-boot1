@@ -24,4 +24,16 @@ public class PlusOne66 {
         another[0] = 1;
         return another;
     }
+
+    public int[] plusOne1(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i--) {
+            digits[i]++;
+            digits[i] %= 10;
+            if (digits[i]!=0) return digits;
+        }
+        int[] another = new int[digits.length + 1];
+        another[0] = 1;
+        return another;
+    }
+
 }

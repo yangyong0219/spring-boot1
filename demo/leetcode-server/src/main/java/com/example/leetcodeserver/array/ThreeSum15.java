@@ -39,4 +39,33 @@ public class ThreeSum15 {
         return ans;
 
     }
+
+    public List<List<Integer>> threeSu1(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if (nums.length<3) return ans;
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i]>0) break;
+            if (i>0 && nums[i-1] == nums[i]) continue;
+            int start = i+1;
+            int end = nums.length - 1;
+            while (end > start) {
+                int curr = nums[start] + nums[end] + nums[i];
+                if (curr > 0) {
+                    end--;
+                    while (nums[end-1] == nums[end]) end--;
+                } else if (curr < 0) {
+                    start++;
+                    while (nums[start - 1] == nums[start]) start++;
+                } else {
+                    ans.add(Arrays.asList(nums[i], nums[end], nums[start]));
+                    start++;
+                    end--;
+                }
+            }
+        }
+        return ans;
+
+    }
+
 }

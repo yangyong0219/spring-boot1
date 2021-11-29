@@ -66,4 +66,31 @@ public class LinkedListCycle142 {
         }
         return slow;
     }
+
+    public ListNode detectCycle1(ListNode head) {
+        if (head == null || head.next == null) return null;
+        ListNode fast = head;
+        ListNode slow = head;
+        while (true) {
+            if (fast == null || fast.next == null) return null;
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) break;
+        }
+        fast = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+
+//        Set<ListNode> exist = new HashSet<>();
+//        while (head != null) {
+//            if (!exist.add(head)) {
+//                return head;
+//            }
+//            head = head.next;
+//        }
+//        return null;
+    }
 }

@@ -55,4 +55,39 @@ public class MergeTwoSortedList21 {
         return pre.next;
     }
 
+    public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
+//
+//        //递归
+//        if (l1 == null) {
+//            return l2;
+//        } else if (l2 == null) {
+//            return l1;
+//        } else if (l1.val > l2.val) {
+//            l2.next = mergeTwoLists(l1, l2.next);
+//            return l2;
+//        } else {
+//            l1.next = mergeTwoLists(l2, l1.next);
+//            return l1;
+//        }
+//
+        //迭代
+        ListNode pre = new ListNode(-1);
+        ListNode move = pre;
+        while (l1 != null && l2 != null) {
+            if (l1.val > l2.val) {
+                move.next = l2;
+                l2 = l2.next;
+            } else {
+                move.next = l1;
+                l1.next = l2;
+            }
+            move = move.next;
+        }
+        move.next = l1 == null ? l2 : l1;
+        return pre.next;
+    }
+
+
+
+
 }

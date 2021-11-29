@@ -37,4 +37,20 @@ public class SwapNodesInPairs24 {
         return pre.next;
 
     }
+
+    public ListNode swapPairs1(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode pre = new ListNode(-1);
+        ListNode one = pre;
+        while (one.next != null && one.next.next != null) {
+            ListNode two = one.next;
+            ListNode three = one.next.next;
+            one.next = three;
+            two.next = three.next;
+            three.next = two;
+            one = two;
+        }
+        return pre.next;
+
+    }
 }
