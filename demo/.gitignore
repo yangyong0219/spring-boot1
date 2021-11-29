@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+/redis-server/.mvn/wrapper/maven-wrapper.jar
+
+../.idea/*
+/eureka/.mvn/*
+/redis-server/.mvn/*

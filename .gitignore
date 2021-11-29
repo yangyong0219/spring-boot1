@@ -2,3 +2,5 @@
 /.idea/jarRepositories.xml
 /.idea/libraries/*
 /.idea/*
+/demo/hello-server/.mvn/*
+/demo/redis-server/.mvn/*
