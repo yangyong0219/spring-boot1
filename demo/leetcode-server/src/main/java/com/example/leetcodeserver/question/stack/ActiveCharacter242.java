@@ -1,4 +1,4 @@
-package com.example.leetcodeserver.stack;
+package com.example.leetcodeserver.question.stack;
 
 import java.util.HashMap;
 import java.util.Map;

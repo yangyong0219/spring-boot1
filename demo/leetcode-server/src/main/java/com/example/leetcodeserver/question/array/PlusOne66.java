@@ -1,4 +1,4 @@
-package com.example.leetcodeserver.array;
+package com.example.leetcodeserver.question.array;
 
 public class PlusOne66 {
     public static void main(String[] args) {

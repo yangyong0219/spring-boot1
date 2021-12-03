@@ -1,9 +1,6 @@
-package com.example.leetcodeserver.array;
+package com.example.leetcodeserver.question.array;
 
 import com.example.leetcodeserver.untils.ListNode;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class LinkedListCycle141 {
     public static void main(String[] args) {

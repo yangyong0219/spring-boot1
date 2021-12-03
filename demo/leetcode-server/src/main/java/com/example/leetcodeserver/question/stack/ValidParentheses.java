@@ -1,6 +1,4 @@
-package com.example.leetcodeserver.stack;
-
-import org.yaml.snakeyaml.util.ArrayStack;
+package com.example.leetcodeserver.question.stack;
 
 import java.util.HashMap;
 import java.util.Map;
