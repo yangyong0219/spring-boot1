@@ -56,8 +56,6 @@ public class MergeTwoSortedList21 {
     }
 
     public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
-//
-//        //递归
 //        if (l1 == null) {
 //            return l2;
 //        } else if (l2 == null) {
@@ -66,11 +64,10 @@ public class MergeTwoSortedList21 {
 //            l2.next = mergeTwoLists(l1, l2.next);
 //            return l2;
 //        } else {
-//            l1.next = mergeTwoLists(l2, l1.next);
+//            l1.next = mergeTwoLists(l1.next, l2);
 //            return l1;
 //        }
-//
-        //迭代
+
         ListNode pre = new ListNode(-1);
         ListNode move = pre;
         while (l1 != null && l2 != null) {
@@ -79,12 +76,20 @@ public class MergeTwoSortedList21 {
                 l2 = l2.next;
             } else {
                 move.next = l1;
-                l1.next = l2;
+                l1 = l1.next;
             }
             move = move.next;
         }
         move.next = l1 == null ? l2 : l1;
-        return pre.next;
+        return pre;
+
+
+
+
+
+
+
+
     }
 
 

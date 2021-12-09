@@ -14,7 +14,7 @@ public class ReverseLinkedList206 {
         node3.next = node4;
         node4.next = node5;
         ReverseLinkedList206 reverseLinkedList206 = new ReverseLinkedList206();
-        ListNode node = reverseLinkedList206.reverseList(node1);
+        ListNode node = reverseLinkedList206.reverseList1(node1);
         System.out.println(node);
 
     }
@@ -43,23 +43,23 @@ public class ReverseLinkedList206 {
         return curr;
     }
 
+    // 1 2 3 4 5    4-5-4   5-4
     public ListNode reverseList1(ListNode head) {
 //        ListNode pre = null;
 //        ListNode curr = head;
-//        while (curr != null) {
+//        while (curr.next != null) {
 //            ListNode next = curr.next;
 //            curr.next = pre;
 //            pre = curr;
 //            curr = next;
-//
 //        }
 //        return pre;
-
-        //递归
-        if (head == null || head.next == null) return head;
-        ListNode curr = reverseList(head);
-        curr.next.next = curr;
-        curr.next = null;
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode curr = reverseList1(head.next);
+        head.next.next = head;
+        head.next = null;
         return curr;
 
     }

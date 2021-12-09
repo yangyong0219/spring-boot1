@@ -2,6 +2,9 @@ package com.example.leetcodeserver.question.array;
 
 import com.example.leetcodeserver.untils.ListNode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedListCycle141 {
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
@@ -13,11 +16,12 @@ public class LinkedListCycle141 {
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
-        node5.next = node2;
+//        node5.next = node2;
         LinkedListCycle141 linkedListCycle141 = new LinkedListCycle141();
-        boolean b = linkedListCycle141.hasCycle(node1);
+        boolean b = linkedListCycle141.hasCycle1(node1);
         System.out.println(b);
     }
+
     public boolean hasCycle(ListNode head) {
         //Hash法
 //        Set<ListNode> exist = new HashSet<>();
@@ -45,24 +49,9 @@ public class LinkedListCycle141 {
         return true;
     }
 
-//    public boolean hasCycle1(ListNode head) {
-////        Set<ListNode> exist = new HashSet<>();
-////        while (head != null) {
-////            if (!exist.add(head)) {
-////                return true;
-////            }
-////            head = head.next;
-////        }
-////        return false;
-//        if (head == null || head.next == null) return false;
-//        ListNode fast = head;
-//        ListNode slow = head;
-//        do {
-//            if (fast == null || fast.next == null) return false;
-//            fast = fast.next.next;
-//            slow = slow.next;
-//        } while (slow != fast);
-//        return true;
-//    }
+    public boolean hasCycle1(ListNode head) {
+
+        return false;
+    }
 
 }

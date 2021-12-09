@@ -12,12 +12,32 @@ public class RotateArrays189 {
     public void rotate(int[] nums, int k) {
         //这是一个很神奇的故事，往后轮转k次，等于k之前的数组反转，k之后的数组反转，再整个反转
         k = k % nums.length;
-        reverse(nums, 0, nums.length - 1);
         reverse(nums, 0, k-1);
+        reverse(nums, 0, nums.length - 1);
         reverse(nums, k, nums.length - 1);
+
     }
 
     private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public void rotate1(int[] nums, int k) {
+        //这是一个很神奇的故事，往后轮转k次，等于k之前的数组反转，k之后的数组反转，再整个反转
+        k = k % nums.length;
+        reverse1(nums, 0, k-1);
+        reverse1(nums, 0, nums.length - 1);
+        reverse1(nums, k, nums.length - 1);
+
+    }
+
+    private void reverse1(int[] nums, int start, int end) {
         while (start < end) {
             int temp = nums[start];
             nums[start] = nums[end];

@@ -14,7 +14,7 @@ public class SwapNodesInPairs24 {
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
-        ListNode node = swapNodesInPairs24.swapPairs(node1);
+        ListNode node = swapNodesInPairs24.swapPairs1(node1);
         System.out.println(node);
     }
 
@@ -23,16 +23,17 @@ public class SwapNodesInPairs24 {
         //假如有四个节点
         //0 1 2 3 4 5  0-2  1-3 2-1 即可 就变成了 0 2 1 3 4 5 等于交换了0之后的两个节点
         //所以新建一个节点当作0，每次交换0后面的两个 再让0前进一步
-        ListNode pre = new ListNode(0);
+        if (head == null || head.next == null) return head;
+        ListNode pre = new ListNode(-1);
         pre.next = head;
-        ListNode one = pre;
-        while (one.next != null && one.next.next != null) {
-            ListNode two = one.next;
-            ListNode three = one.next.next;
-            one.next = three;
-            two.next = three.next;
-            three.next = two;
-            one = two;
+        ListNode curr = pre;
+        while (curr.next != null && curr.next.next != null) {
+            ListNode one = curr.next;
+            ListNode two = curr.next.next;
+            curr.next = two;
+            one.next = two.next;
+            two.next = one;
+            curr = one;
         }
         return pre.next;
 
@@ -41,16 +42,18 @@ public class SwapNodesInPairs24 {
     public ListNode swapPairs1(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode pre = new ListNode(-1);
-        ListNode one = pre;
-        while (one.next != null && one.next.next != null) {
-            ListNode two = one.next;
-            ListNode three = one.next.next;
-            one.next = three;
-            two.next = three.next;
-            three.next = two;
-            one = two;
+        pre.next = head;
+        ListNode curr = pre;
+        while (curr.next != null && curr.next.next != null) {
+            ListNode one = curr.next;
+            ListNode two = curr.next.next;
+            curr.next = two;
+            one.next = two.next;
+            two.next = one;
+            curr = one;
         }
         return pre.next;
+
 
     }
 }

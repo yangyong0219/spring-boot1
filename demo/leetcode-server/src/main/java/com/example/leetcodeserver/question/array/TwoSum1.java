@@ -28,7 +28,7 @@ public class TwoSum1 {
 //        return new int[0];
 
         //hash解法
-        Map<Integer, Integer> numsMap = new HashMap();
+        Map<Integer, Integer> numsMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (numsMap.containsKey(target - nums[i])) {
                 return new int[]{numsMap.get(target-nums[i]), i};
@@ -39,4 +39,26 @@ public class TwoSum1 {
         }
         return new int[0];
     }
+
+    public int[] twoSum1(int[] nums, int target) {
+        //
+//        for (int i = 0; i < nums.length-1; i++) {
+//            for (int j = i + 1; j < nums.length; j++) {
+//                if (nums[i] + nums[j] == target) {
+//                    return new int[]{i, j};
+//                }
+//            }
+//        }
+//        return new int[]{};
+
+        Map<Integer, Integer> data = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (data.containsKey(target - nums[i])) {
+                return new int[]{i, data.get(target - nums[i])};
+            }
+            data.put(nums[i], i);
+        }
+        return new int[0];
+    }
+
 }

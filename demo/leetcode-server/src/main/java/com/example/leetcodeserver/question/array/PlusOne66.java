@@ -26,7 +26,8 @@ public class PlusOne66 {
     }
 
     public int[] plusOne1(int[] digits) {
-        for (int i = digits.length - 1; i >= 0; i--) {
+        int len = digits.length - 1;
+        for (int i = len; i >= 0; i--) {
             digits[i]++;
             digits[i] %= 10;
             if (digits[i]!=0) return digits;
@@ -34,6 +35,7 @@ public class PlusOne66 {
         int[] another = new int[digits.length + 1];
         another[0] = 1;
         return another;
+
     }
 
 }

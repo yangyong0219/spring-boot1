@@ -2,6 +2,9 @@ package com.example.leetcodeserver.question.array;
 
 import com.example.leetcodeserver.untils.ListNode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedListCycle142 {
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
@@ -44,16 +47,13 @@ public class LinkedListCycle142 {
         if (head == null || head.next == null) return null;
         ListNode slow = head;
         ListNode fast = head;
-        while (true) {
+        do {
             if (fast == null || fast.next == null) {
                 return null;
             }
             fast = fast.next.next;
             slow = slow.next;
-            if (fast == slow) {
-                break;
-            }
-        }
+        } while (fast != slow);
         fast = head;
         while (fast != slow) {
             fast = fast.next;
@@ -63,29 +63,30 @@ public class LinkedListCycle142 {
     }
 
     public ListNode detectCycle1(ListNode head) {
-        if (head == null || head.next == null) return null;
-        ListNode fast = head;
-        ListNode slow = head;
-        while (true) {
-            if (fast == null || fast.next == null) return null;
-            fast = fast.next.next;
-            slow = slow.next;
-            if (fast == slow) break;
-        }
-        fast = head;
-        while (fast != slow) {
-            fast = fast.next;
-            slow = slow.next;
-        }
-        return slow;
-
 //        Set<ListNode> exist = new HashSet<>();
 //        while (head != null) {
-//            if (!exist.add(head)) {
+//            boolean add = exist.add(head);
+//            if (!add) {
 //                return head;
 //            }
 //            head = head.next;
 //        }
 //        return null;
+
+        if (head == null || head.next == null) return null;
+        ListNode slow = head;
+        ListNode fast = head;
+        do {
+            if (fast == null || fast.next == null) return null;
+            slow = slow.next;
+            fast = fast.next.next;
+        } while (slow != fast);
+        fast = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return fast;
+
     }
 }

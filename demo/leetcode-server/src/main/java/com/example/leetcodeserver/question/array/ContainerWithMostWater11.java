@@ -4,7 +4,7 @@ public class ContainerWithMostWater11 {
     public static void main(String[] args) {
         ContainerWithMostWater11 container = new ContainerWithMostWater11();
         int[] ints = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        int ans = container.containerWithMostWater(ints);
+        int ans = container.containerWithMostWater1(ints);
         System.out.println(ans);
     }
 
@@ -23,4 +23,9 @@ public class ContainerWithMostWater11 {
         }
         return ans;
     }
+
+    private int containerWithMostWater1(int[] height) {
+        return 0;
+    }
+
 }

@@ -3,7 +3,7 @@ package com.example.leetcodeserver.question.array;
 public class ClimeStairs70 {
     public static void main(String[] args) {
         ClimeStairs70 climeStairs70 = new ClimeStairs70();
-        int result = climeStairs70.climbStairs(6);
+        int result = climeStairs70.climbStairs1(6);
         System.out.println(result);
     }
 
@@ -37,5 +37,18 @@ public class ClimeStairs70 {
         }
         return curr;
     }
+
+    public int climbStairs1(int n) {
+        //就是从1开始的斐波拉契数列 1 2 3 5 8 。。。
+
+        //1. 暴力递归
+
+        //2. 自底向上缓存在数组
+
+
+        //3. 自底向上不用数组
+        return 0;
+    }
+
 
 }

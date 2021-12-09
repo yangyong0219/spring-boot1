@@ -21,11 +21,11 @@ public class RemoveDuplicatesFromSortedArray26 {
             }
             j++;
         }
+        //因为i是元素的下标，所以这里返回的是i+1
         return i + 1;
     }
 
     public int removeDuplicates1(int[] nums) {
-        if (nums.length<2) return nums.length;
         int i = 0;
         int j = 1;
         while (j < nums.length) {
