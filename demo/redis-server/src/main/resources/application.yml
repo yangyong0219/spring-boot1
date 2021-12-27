@@ -1,0 +1,21 @@
+server:
+  port: 1005
+
+
+spring:
+  application:
+    name: redis-server
+  redis:
+    host: y2youth.com
+    database: 0
+    connect-timeout: 30000
+    port: 6379
+    password:
+    ssl: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8766/eureka/
+  instance:
+    hostname: 172.0.0.1

@@ -5,3 +5,9 @@ spring:
   application:
     name: hello-server
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8766/eureka/
+  instance:
+    hostname: 172.0.0.1

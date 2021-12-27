@@ -9,6 +9,7 @@ public class ValidParentheses {
         ValidParentheses validParentheses = new ValidParentheses();
         boolean valid = validParentheses.isValid("()[]{}");
         System.out.println(valid);
+        System.out.println(Math.ceil(27/20D));
 
     }
 
