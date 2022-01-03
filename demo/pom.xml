@@ -22,6 +22,7 @@
 	<modules>
 		<module>eureka</module>
 		<module>hello-server</module>
+		<module>order-server</module>
 		<module>leetcode-server</module>
 		<module>redis-server</module>
 		<module>rabbit-server</module>
