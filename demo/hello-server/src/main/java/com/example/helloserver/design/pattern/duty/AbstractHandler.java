@@ -3,9 +3,9 @@ package com.example.helloserver.design.pattern.duty;
 import com.example.helloserver.dto.design.duty.OrderRootDTO;
 
 public abstract class AbstractHandler {
-    protected AbstractHandler successor;
+    protected final AbstractHandler successor;
 
-    public AbstractHandler(AbstractHandler successor) {
+    protected AbstractHandler(AbstractHandler successor) {
         this.successor = successor;
     }
 
