@@ -1,4 +1,4 @@
-package com.example.helloserver.designPattern.duty;
+package com.example.helloserver.design.pattern.duty;
 
 public class TestHandler {
     public static void main(String[] args) {

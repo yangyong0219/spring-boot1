@@ -1,11 +1,10 @@
-package com.example.helloserver.designPattern.duty;
+package com.example.helloserver.design.pattern.duty;
 
 import com.example.helloserver.dto.design.duty.OrderRootDTO;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
-public class HandlerB extends Handler {
+public class HandlerB extends AbstractHandler {
 
-    public HandlerB(Handler successor) {
+    public HandlerB(AbstractHandler successor) {
         super(successor);
     }
 

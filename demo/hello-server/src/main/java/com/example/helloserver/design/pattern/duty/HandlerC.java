@@ -1,10 +1,10 @@
-package com.example.helloserver.designPattern.duty;
+package com.example.helloserver.design.pattern.duty;
 
 import com.example.helloserver.dto.design.duty.OrderRootDTO;
 
-public class HandlerC extends Handler{
+public class HandlerC extends AbstractHandler {
 
-    public HandlerC(Handler successor) {
+    public HandlerC(AbstractHandler successor) {
         super(successor);
     }
 
