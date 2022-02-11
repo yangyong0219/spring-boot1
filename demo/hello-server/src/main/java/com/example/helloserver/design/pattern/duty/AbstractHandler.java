@@ -5,7 +5,7 @@ import com.example.helloserver.dto.design.duty.OrderRootDTO;
 public abstract class AbstractHandler {
     protected AbstractHandler successor;
 
-    public AbstractHandler(AbstractHandler successor) {
+    protected AbstractHandler(AbstractHandler successor) {
         this.successor = successor;
     }
 
